@@ -73,7 +73,7 @@ body {
     <section>
       <h1><img src="fhiri.png" style="height: 1em; display: inline;"/> FHIR</h1>
       <hr/>
-      <h3>Open Health IT Standard</h3>
+      <h3>ecosystem</h3>
       <p>
       <small>by <a href="http://github.com/niquola">niquola</a></small>
       </p>
@@ -100,196 +100,150 @@ body {
         <img src="niquola.jpg" style="border:none; box-shado: none; background: transparent;"/>
     </section>
 
-   <section>
-    <h2>Patient Centric</h2>
-    <hr/>
-    <img src="pc.png"/>
-   </section>
+
+    <section data-markdown><script type="text/template">
+     ### FHIR Ecosystem
+     ----
+     ![eco](eco.jpg)
+    </script></section>
+
+    <section data-markdown><script type="text/template">
+     ### Agenda
+     ----
+     * Open Standard
+     * Community
+     * Services, Libs & Tools
+    </script></section>
 
     <section>
-      <h2>HL7</h2>
+      <h2>OPEN</h2>
       <hr/>
-      <img src="hl7.gif"/>
-    </section>
-
-    <section>
-      <h2>HL7 v3</h2>
-      <img src="hl7v3.png"/>
-    </section>
-
-    <section>
-      <h2>Continuity of Care Document</h2>
-      <hr/>
-      <img src="onc.png"/>
-    </section>
-
-    <section>
-      <h2>FHIR</h2>
-      <hr/>
-      <img src="fhirl.png"/>
-    </section>
-
-    <section>
-      <h2>FHIR</h2>
-      <hr/>
-      <ul>
-        <li>Fast </li>
-        <li>Healthcare </li>
-        <li>Interoperability </li>
-        <li>Resources</li>
-      </ul>
-    </section>
-
-    <section>
       <a href="http://creativecommons.org/licenses/by/3.0/deed.ru"><img src="cc.png"/></a>
     </section>
 
-    <section>
-      <h2>Specification</h2>
-      <hr/>
-      <h3>http://www.hl7.org/implement/standards/fhir/</h3>
-      <h3>http://fhir-ru.github.io</h3>
-    </section>
+    <section data-markdown><script type="text/template">
+     ### Open Standards
+     ---
+     * *nix (linux, freebsd) & POSIX
+     * WWW & HTTP, HTML, CSS etc
+     * HealthIT & FHIR?
+    </script></section>
 
-    <section>
-      <h2>Principles</h2>
-      <hr/>
-      <ul>
-        <li>focus on implementers</li>
-        <li>common scenarios</li>
-        <li>web technology</li>
-        <li>freely available</li>
-        <li>community driven</li>
-      </ul>
-    </section>
+    <section data-markdown><script type="text/template">
+     ### Community Driven
+     -----
+     * online
+     * offline
+    </script></section>
 
-    <section>
-      <h2>Roadmap</h2>
-      <hr/>
-      <ul>
-        <li>2011 - concept </li>
-        <li>Sep 2012 - first draft ballot </li>
-        <li>Sep 2012 - first conectathon </li>
-        <li>Aug/Sep 2013 - first DSTU </li>
-        <li>Jan 2014 - finilize DSTU </li>
-        <li>2015 - second DSTU</li>
-        <li>2016 - normative</li>
-      </ul>
-    </section>
+    <section data-markdown><script type="text/template">
+     ### Community ONLINE
 
-    <section>
-      <h2>REST Service</h2>
-      <hr/>
-      <img src="rest.jpg"/>
-    </section>
+     ---
 
-    <section>
-      <h2>Resource</h2>
-      <hr/>
-      <img src="pt.png"/>
-    </section>
+     * [Official Site](http://hl7.org/implement/standards/fhir/)
+     * [HL7 wiki](http://wiki.hl7.org/index.php?title=FHIR)
+     * [Stack Overflow](http://stackoverflow.com/questions/tagged/hl7_fhir)
+     * [Mail List](http://wiki.hl7.org/index.php?title=FHIR_email_list_subscription_instructions)
+     * [Skype Chats](http://wiki.hl7.org/index.php?title=FHIR_Skype_Chat)
+    </script></section>
 
-    <section data-markdown>
-      <script type="text/template">
-## JSON or XML Document
-```json
-{
- "resourceType": "Patient",
- "identifier": [{
-    "use": "usual",
-    "label": "MRN",
-    "system": "urn:oid:1.2.36.146.595.217.0.1",
-    "value": "12345",
-    "period": { "start": "2001-05-06" },
-    "assigner": { "display": "Acme Healthcare"}
- }],
- "name": [{
-    "use": "official",
-    "family": [ "Chalmers" ],
-    "given": [ "Peter", "James" ]
- }],
-...
-}
-```
-      </script>
-    </section>
+    <section data-markdown><script type="text/template">
+     ### Development ONLINE
 
-    <section>
-      <h3>Resources ~50 resources</h3>
-      <hr/>
-      <img src="ress.png"/>
-    </section>
+     ---
 
-    <section data-markdown>
-      <script type="text/template">
-## REST API
-```json
-POST /Patient/_search HTTP/1.1
-Host: fhirplace.io
-name=ivan&name=ivanov
+     * [gForce](http://gforge.hl7.org/gf/project/fhir/)
+     * [github](https://github.com/hl7-fhir/fhir-svn)
+     * [issue tracker](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemBrowse&tracker_id=677)
 
-HTTP/1.1 200 OK
-Content-Type: fhir/json;charset=utf-8
-Content-Length: length
+    </script></section>
 
-{
- "resourceType": "Patient",
- "name": [{
-    "use": "official",
-    "family": [ "Ivanov" ],
-    "given": [ "Ivan"]
- }],
-...
-}
-```
-      </script>
-    </section>
+    <section data-markdown><script type="text/template">
+     ### Russian FHIR online
 
-    <section>
-      <h2>Value Sets</h2>
-      <hr/>
-      <img src="vs.png"/>
-    </section>
+     ---
 
-    <section data-markdown>
-      <script type="text/template">
-## Extensions
-```json
-{"resourceType": "Patient",
- "extension": [
-    {
-      "url": "http://hl7.org/fhir/Profile/us-core#race",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "http://hl7.org/fhir/v3/Race",
-            "code": "1096-7"
-...
-```
-      </script>
-    </section>
+     * [translation](http://fhir-ru.github.io/)
+     * [google group](https://groups.google.com/forum/#!forum/fhir2ru)
 
-    <section>
-      <h2>Development</h2>
-      <hr/>
-    </section>
+     ---
 
-    <section>
-      <h2>connectathon</h2>
-      <hr/>
-      <img src="cat.jpg"/>
-    </section>
+     Alexandra Semenova & Eugeny Mozolev
+    </script></section>
 
-    <section>
-      <h2>Libs, Tools & Solutions</h2>
-      <hr/>
-      <ul>
-          <li>Java, C#, JavaScript</li>
-          <li>Clients</li>
-          <li>Servers</li>
-          <li>Tools</li>
-      </ul>
-    </section>
+    <section data-markdown><script type="text/template">
+     ### Community offline / Conectathons
+
+     ----
+
+     * feedback
+     * implementabe
+     * issues
+
+     ----
+
+     ![cat](cat.jpg)
+
+    </script></section>
+
+
+    <section data-markdown><script type="text/template">
+     ### FHIR Developer days
+
+     ----
+
+     * [presentations](http://www.slideshare.net/DevDays2014)
+     * [video](http://vimeo.com/channels/hl7fhir)
+
+     ----
+     ![img](connect.jpg)
+
+    </script></section>
+
+
+    <section data-markdown><script type="text/template">
+     ### Architecture
+     ----
+    </script></section>
+
+    <section data-markdown><script type="text/template">
+     ### Libs & Tools
+
+     ----
+
+     ![lego](lego.jpg)
+    </script></section>
+
+    <section data-markdown><script type="text/template">
+     ### Ref. Implementations
+     ----
+     * Java
+     * .NET
+     * Delphi (ref. impl.)
+     * JavaScript (fhir.js)
+     * ...
+    </script></section>
+
+    <section data-markdown><script type="text/template">
+     ### Servers
+     ----
+     * [Grahame server](http://fhir.healthintersections.com.au/)
+     * [HAPI](http://jamesagnew.github.io/hapi-fhir/)
+     * [SPARK](https://github.com/furore-fhir/spark)
+     * [SMART Platform](https://github.com/smart-on-fhir)
+     * [fhirplace](https://github.com/fhirbase)
+     * ...
+    </script></section>
+
+    <section data-markdown><script type="text/template">
+     ### Tools
+     ----
+     * [FORGE: Profile editor](http://fhir.furore.com/forge)
+     * [Tests](http://fhir.furore.com/test)
+     * [ValueSet editor](http://fhir.github.io/fhir-terminology/)
+     * [Viewers](http://fhirtest.uhn.ca/)
+    </script></section>
 
     <section>
       <h2> <img style="display:inline-block; height: 1em;" src="fhirbase.png"/> Fhirbase</h2>
@@ -305,35 +259,41 @@ Content-Length: length
       <ul>
         <li>Open Source MIT</li>
         <li>PostgreSQL: ACID, SQL</li>
-        <li>jsquery & VODKA index</li>
+        <li><a href="https://github.com/niquola/jsquery">jsquery & VODKA index</a></li>
         <li>most of API</li>
       </ul>
     </section>
 
     <section>
-      <h2> <img style="display:inline-block; height: 1em;" src="fhirbase.png"/> Fhirplace</h2>
-      <hr/>
-      <p> FHIR server implementation backed by fhirbase</p>
-    </section>
-
-    <section>
-      <h2> fhir.js</h2>
+      <h2><a href="https://github.com/FHIR/fhir.js">fhir.js</a></h2>
       <hr/>
       <p>Generic JavaScript client</p>
       <hr/>
       <h3>jQuery, Node, AngularJs</h3>
     </section>
 
+    <section data-markdown><script type="text/template">
+     ### [fhirplace](http://fhirplace.health-samurai.io/)
+     ---
+
+    </script></section>
+
+
+    <section data-markdown><script type="text/template">
+    ### Road Map
+
+    ----
+
+    * DSTU 2
+    * security middleware
+    * terminology server
+
+    </script></section>
+
     <section>
-      <h1><img src="fhiri.png" style="height: 1em; display: inline;"/> FHIR</h1>
+      <h1>JOIN US</h1>
       <hr/>
-      <ul>
-        <li>mobile apps</li>
-        <li>cloud communications</li>
-        <li>EHR-based data sharing</li>
-        <li>server communication </li>
-        <li>... </li>
-      </ul>
+      <h3>conectathon???</h3>
     </section>
 
     <section>
