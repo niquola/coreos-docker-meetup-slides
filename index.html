@@ -4,11 +4,10 @@
 <head>
 <meta charset="utf-8">
 
-<title>fhir</title>
-<link rel="shortcut icon" href="favicon.png">
-
-<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-<meta name="author" content="Hakim El Hattab">
+<title>coreos-slides</title>
+<link rel="shortcut icon" href="https://coreos.com/assets/ico/favicon.png">
+<meta name="description" content="Slides about coreos"/>
+<meta name="author" content="niquola">
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -27,7 +26,7 @@
   background: black;
   overflow: hidden;
   max-height: 500px;
-  padding: 0;
+  padding: 10px;
 }
 </style>
 
@@ -63,16 +62,114 @@ body {
   color: #444;
 }
 .reveal .fa { font-family:FontAwesome; font-style: normal; }
+
+
+.anim {
+  font-family: 'Amatic SC', sans-serif;
+}
+.anima {
+  -webkit-animation: squiggly-anim 0.34s linear infinite;
+          animation: squiggly-anim 0.34s linear infinite;
+}
+.anim {
+  line-height: 100vh;
+}
+.anim .anima {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  outline: none;
+  text-align: center;
+  line-height: 1;
+}
+@-webkit-keyframes squiggly-anim {
+  0% {
+    -webkit-filter: url("#squiggly-0");
+            filter: url("#squiggly-0");
+  }
+  25% {
+    -webkit-filter: url("#squiggly-1");
+            filter: url("#squiggly-1");
+  }
+  50% {
+    -webkit-filter: url("#squiggly-2");
+            filter: url("#squiggly-2");
+  }
+  75% {
+    -webkit-filter: url("#squiggly-3");
+            filter: url("#squiggly-3");
+  }
+  100% {
+    -webkit-filter: url("#squiggly-4");
+            filter: url("#squiggly-4");
+  }
+}
+@keyframes squiggly-anim {
+  0% {
+    -webkit-filter: url("#squiggly-0");
+            filter: url("#squiggly-0");
+  }
+  25% {
+    -webkit-filter: url("#squiggly-1");
+            filter: url("#squiggly-1");
+  }
+  50% {
+    -webkit-filter: url("#squiggly-2");
+            filter: url("#squiggly-2");
+  }
+  75% {
+    -webkit-filter: url("#squiggly-3");
+            filter: url("#squiggly-3");
+  }
+  100% {
+    -webkit-filter: url("#squiggly-4");
+            filter: url("#squiggly-4");
+  }
+}
+
+
 </style>
 
 <body>
 
 <div class="reveal"><div class="slides">
-    <section>
-      <h1>coreos</h1>
-      <hr/>
-      <h3>знакомство</h3>
-      <p> <small>by <a href="http://github.com/niquola">niquola</a></small> </p>
+    <section class="anim">
+<div class="anima" contenteditable>
+  <h1>coreos</h1>
+  <hr/>
+  <h3 class="small">знакомство</h3>
+  <p> <small>by <a href="http://github.com/niquola">niquola</a></small> </p>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+
+
+    <filter id="squiggly-0">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
+      <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+    </filter>
+    <filter id="squiggly-1">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+    </filter>
+
+    <filter id="squiggly-2">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+    </filter>
+    <filter id="squiggly-3">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+    </filter>
+
+    <filter id="squiggly-4">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+    </filter>
+  </defs>
+</svg>
+
     </section>
 
     <section>
@@ -95,16 +192,27 @@ body {
     <h3>Alex Polivi</h3>
     <hr/>
     <img src="alex.jpg"/>
+    <hr/>
+    <p>Mozzila sysadmin</p>
     </section>
 
     <section>
     <img style="float:right; margin-left: 2em;" src="https://coreos.com/assets/images/media/update-diagram.png"/>
     <h3>core OS</h3>
     <hr/>
-    <p>fork of chromeos--</p>
-    <p>atomic updates (fast patch)</p>
-    <p>read-only partition for root</p>
-    <p>cloud-init</p>
+    <ul>
+        <li>fork of chromeos--</li>
+        <li>atomic updates (fast patch)</li>
+        <li>read-only partition for root</li>
+        <li>fast boot time</li>
+        <li>cloud-config</li>
+    </ul>
+    </section>
+
+    <section>
+    <h3>locksmith</h3>
+    <hr/>
+    <p>locksmith is a reboot manager</p>
     </section>
 
     <section>
@@ -115,10 +223,11 @@ body {
     <p>Alpha->Betta->Stable</p>
     </section>
 
+
     <section>
     <h3>cloud-config (yaml)</h3>
     <hr/>
-    <pre><code class="yaml">
+    <pre><code class="yml">
     #cloud-config
 
     coreos:
@@ -134,11 +243,145 @@ body {
         content: |
           nameserver 192.0.2.2
           nameserver 192.0.2.3
+
+    coreos-cloudinit -validate -from-file=cfg.yaml
     </code></pre>
     </section>
 
+    <section>
+    <img src="etcd.png"/>
+    <hr/>
+    <p>distributed, consistent key value store</p>
+    </section>
 
+    <section>
+    <a href="https://github.com/coreos/etcd/tree/master/etcdctl">etcdctl api</a>
+    <hr/>
+    <pre><code class="bash">
+   etcdctl set /foo/bar "Hello world" --ttl 60
+
+   etcdctl get /foo/bar
+
+   etcdctl watch /foo/bar --forever
+
+   etcdctl exec-watch /foo/bar -- sh -c "env | grep ETCD"
+
+   etcdctl ls --recursive -p
+
+   etcdctl rm /path/to/dir --recursive
+
+   curl -L http://etcd.com:4001/v2/keys/mykey -XPUT -d value="this is awesome"
+    </code></pre>
+    </section>
+
+    <section>
+    <h3>raft - consensus algorythm</h3>
+    <hr/>
+    <img src="raft_cons.gif"/>
+    <hr/>
+    <a href="https://raftconsensus.github.io/">link 1</a>
+    <a href="http://thesecretlivesofdata.com/raft/">link 2</a>
+    </section>
+
+    <section>
+    <img style="float: right; margin-left: 1em;" src="https://coreos.com/assets/images/media/Three-Tier-Webapp.png"/>
+    <h2>fleet<h3>
+    <hr/>
+    <p>systemd + etcd<p>
+    <p>distributed init system</p>
+    </section>
+
+    <section>
+    <h3>systemd</h3>
+    <hr/>
+    <pre><code class="unit">
+[Unit]
+Description=My Advanced Service
+After=etcd.service
+After=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill apache1
+ExecStartPre=-/usr/bin/docker rm apache1
+ExecStartPre=/usr/bin/docker pull coreos/apache
+ExecStart=/usr/bin/docker run --name apache1 -p 80:80 coreos/apache /usr/sbin/apache2ctl -D FOREGROUND
+ExecStartPost=/usr/bin/etcdctl set /domains/example.com/10.10.10.123:8081 running
+ExecStop=/usr/bin/docker stop apache1
+ExecStopPost=/usr/bin/etcdctl rm /domains/example.com/10.10.10.123:8081
+
+[Install]
+WantedBy=multi-user.target
+  </code></pre>
+<hr/>
+<a href="http://www.freedesktop.org/software/systemd/man/systemd.service.html">systemd man page</a>
+  </section>
+
+ <section>
+  <h3>fleetctl</h3>
+<hr/>
+  <pre><code class="bash">
+alias f=fleetctl
+f list-machines
+f list-units
+f list-unit-files
+
+f submit/destroy examples/hello.service
+
+f cat hello.service
+
+f load/unload hello.service
+
+f start/stop goodbye.service
+
+f journal hello.service
+  </code></pre>
+<hr/>
+<p> MachineID, MachineOf, MachineMetadata, Conflicts, Global</p>
+  <a href="https://gist.github.com/niquola/6689c114b979f4f88849">install</a>
+  </section>
+
+ <section>
+  <h3>docker</h3>
+  </section>
+
+ <section>
+  <img src="rkt.png"/>
+  <hr/>
+  <h3>appc spec</h>
+  <a href="https://github.com/appc/spec/">read</a>
+  </section>
+
+ <section>
+  <h3>flannel</h3>
+  <hr/>
+  <img src="flannel.png"/>
+  </section>
+
+ <section>
+  <h3>fleetctl</h3>
+  <hr/>
+  <pre><code class="bash">
+#cloud-conf
+...
+coreos:
+ units:
+   - name: flanneld.service
+     drop-ins:
+       - name: 50-network-config.conf
+         content: |
+           [Service]
+           ExecStartPre=/usr/bin/etcdctl set /coreos.com/network/config \
+              '{ "Network": "10.1.0.0/16" }'
+     command: start
+  </code></pre>
+  </section>
+
+ <section>
+  <h2></h2>
+ </section>
 </div></div>
+
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.min.js"></script>
